@@ -1,6 +1,5 @@
 using GraphQL.Polymorphism.GraphQL.Queries;
-using GraphQL.Polymorphism.GraphQL.Types;
-using Microsoft.EntityFrameworkCore;
+using GraphQL.Polymorphism.Models;
 
 namespace GraphQL.Polymorphism
 {
@@ -13,14 +12,13 @@ namespace GraphQL.Polymorphism
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<DogDbContext>(o => o.UseInMemoryDatabase("dogs"));
 
             builder.Services
                 .AddGraphQLServer()
                 .AddQueryType<DogQuery>()
-                .AddType<DogType>()
-                .AddType<DobermanType>()
-                .AddType<LabradorType>(); ;
+                .AddType<Labrador>()
+                .AddType<GermanShepherd>()
+                .AddType<Pudel>();
 
             var app = builder.Build();
 
