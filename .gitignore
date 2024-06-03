@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.sln.docstates
+.vs/
 
 # Build results
 
@@ -13,6 +14,7 @@
 x64/
 [Bb]in/
 [Oo]bj/
+
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
